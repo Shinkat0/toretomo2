@@ -43,6 +43,20 @@
   <li><%= user.name %></li>
 <% end %>
 
+<%= link_to 'コメントする', new_post_training_comment_path(post_training_id: @post_training.id) %>
+
+<p>コメント一覧</p>
+<% @comments.each do |comment| %>
+  <div>
+    <%= comment.user.name %><br />
+    <%= comment.comment %>
+    <% if comment.user == current_user %>
+      <%= link_to '編集', edit_post_training_comment_path(post_training_id: @post_training.id) %>
+      <%= link_to '削除', post_training_comment_path(post_training_id: @post_training.id), method: :delete %>
+    <% end %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Edit', edit_post_training_path(@post_training) %> |
 <%= link_to 'Back', post_trainings_path %>

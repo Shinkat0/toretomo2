@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :post_trainings do
     resources :favorites, only: [:create, :destroy]
+    resources :comments
   end
   devise_for :users
   devise_scope :user do

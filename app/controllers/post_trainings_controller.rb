@@ -11,6 +11,7 @@ class PostTrainingsController < ApplicationController
   # GET /post_trainings/1.json
   def show
     @favorite = Favorite.new
+    @comments = @post_training.comments
   end
 
   # GET /post_trainings/new
