@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :post_trainings
+  resources :post_trainings do
+    resources :favorites, only: [:create, :destroy]
+  end
   devise_for :users
   devise_scope :user do
     root :to => "devise/sessions#new"

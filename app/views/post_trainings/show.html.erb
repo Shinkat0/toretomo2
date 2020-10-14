@@ -30,5 +30,19 @@
   <%= @post_training.bodyweight %>
 </p>
 
+
+<p>いいね件数: <%= @post_training.favorites.count %></p>
+<% if current_user.already_favorited?(@post_training) %>
+  <%= button_to 'いいねを取り消す', post_training_favorite_path(@post_training), method: :delete %>
+<% else %>
+  <%= button_to 'いいね', post_training_favorites_path(@post_training) %>
+<% end %>
+
+<p>いいねしたユーザー</p>
+<% @post_training.favorited_users.each do |user| %>
+  <li><%= user.name %></li>
+<% end %>
+
+
 <%= link_to 'Edit', edit_post_training_path(@post_training) %> |
 <%= link_to 'Back', post_trainings_path %>
