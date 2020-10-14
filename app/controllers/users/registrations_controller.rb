@@ -52,7 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    post_trainings_path
+    "/post_trainings"
   end
 
   # The path used after sign up for inactive accounts.

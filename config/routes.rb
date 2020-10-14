@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :post_trainings
   devise_for :users
   devise_scope :user do
     root :to => "devise/sessions#new"

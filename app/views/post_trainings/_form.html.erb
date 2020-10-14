@@ -1,0 +1,42 @@
+<%= form_with(model: post_training, local: true) do |form| %>
+  <% if post_training.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post_training.errors.count, "error") %> prohibited this post_training from being saved:</h2>
+
+      <ul>
+        <% post_training.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_area :note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :exercise %>
+    <%= form.text_field :exercise %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.number_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rep %>
+    <%= form.number_field :rep %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bodyweight %>
+    <%= form.number_field :bodyweight %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
