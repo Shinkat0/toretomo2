@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'users/show'
   resources :post_trainings do
     resources :favorites, only: [:create, :destroy]
     resources :comments
   end
+  resources :relationships, only: [:create, :destroy]
+  resources :users, only: [:show]
   devise_for :users
   devise_scope :user do
     root :to => "devise/sessions#new"

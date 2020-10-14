@@ -18,7 +18,7 @@
   <tbody>
     <% @post_trainings.each do |post_training| %>
       <tr>
-        <td><%= post_training.user_id %></td>
+        <td><%= link_to post_training.user.name, user_path(post_training.user) %></td>
         <td><%= post_training.note %></td>
         <td><%= post_training.exercise %></td>
         <td><%= post_training.weight %></td>

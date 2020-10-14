@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @post_training.user_id %>
+  <%= link_to @post_training.user.name, user_path(@post_training.user) %>
 </p>
 
 <p>
@@ -40,7 +40,7 @@
 
 <p>いいねしたユーザー</p>
 <% @post_training.favorited_users.each do |user| %>
-  <li><%= user.name %></li>
+  <li><%= link_to user.name, user_path(user) %></li>
 <% end %>
 
 <%= link_to 'コメントする', new_post_training_comment_path(post_training_id: @post_training.id) %>
