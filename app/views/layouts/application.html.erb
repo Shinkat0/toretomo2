@@ -13,7 +13,7 @@
     <header>
       <h1>トレとも</h1>
       <% if current_user %>
-        <%= current_user.name %> でログイン中
+        <%= link_to current_user.name, user_path(current_user) %> でログイン中
       <% end %>
     </header>
     <nav>

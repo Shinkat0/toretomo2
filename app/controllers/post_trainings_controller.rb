@@ -71,6 +71,6 @@ class PostTrainingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_training_params
-      params.require(:post_training).permit(:note, :exercise, :weight, :rep, :bodyweight)
+      params.require(:post_training).permit(:note, :exercise, :weight, :rep, :bodyweight, :image)
     end
 end

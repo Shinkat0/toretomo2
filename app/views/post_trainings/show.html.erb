@@ -30,6 +30,11 @@
   <%= @post_training.bodyweight %>
 </p>
 
+<p>
+  <strong>Image:</strong>
+  <%= attachment_image_tag @post_training, :image %>
+</p>
+
 
 <p>いいね件数: <%= @post_training.favorites.count %></p>
 <% if current_user.already_favorited?(@post_training) %>

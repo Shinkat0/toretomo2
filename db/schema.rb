@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_14_070029) do
+ActiveRecord::Schema.define(version: 2020_10_16_045256) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_070029) do
     t.integer "bodyweight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image_id"
     t.index ["user_id"], name: "index_post_trainings_on_user_id"
   end
 
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_070029) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "profile_image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
