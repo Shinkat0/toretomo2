@@ -1,37 +1,37 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
+  <strong>ユーザー:</strong>
   <%= link_to @post_training.user.name, user_path(@post_training.user) %>
 </p>
 
 <p>
-  <strong>Note:</strong>
+  <strong>メモ:</strong>
   <%= @post_training.note %>
 </p>
 
 <p>
-  <strong>Exercise:</strong>
+  <strong>エクササイズ:</strong>
   <%= @post_training.exercise %>
 </p>
 
 <p>
-  <strong>Weight:</strong>
+  <strong>重量:</strong>
   <%= @post_training.weight %>
 </p>
 
 <p>
-  <strong>Rep:</strong>
+  <strong>レップ数:</strong>
   <%= @post_training.rep %>
 </p>
 
 <p>
-  <strong>Bodyweight:</strong>
+  <strong>体重:</strong>
   <%= @post_training.bodyweight %>
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>画像:</strong>
   <%= attachment_image_tag @post_training, :image %>
 </p>
 
@@ -65,5 +65,5 @@
   <% end %>
 <% end %>
 
-<%= link_to 'Edit', edit_post_training_path(@post_training) if user_signed_in? && current_user == @post_training.user %> |
-<%= link_to 'Back', post_trainings_path %>
+<%= link_to '編集', edit_post_training_path(@post_training) if user_signed_in? && current_user == @post_training.user %> |
+<%= link_to '戻る', post_trainings_path %>
