@@ -55,13 +55,13 @@
                   <%= link_to 'Toretomoとは', about_homes_path, class:"btn btn-sm", style:"background-color: white; color: black; padding: 10px;" %>
                 </li>
                 <li style="margin: 10px;">
-                  <%= link_to 'トレ記録一覧', post_trainings_path, class:"btn btn-sm", style:"background-color: white; color: black; padding: 10px;" %>
-                </li>
-                <li style="margin: 10px;">
                   <%= link_to 'トレ記録投稿', new_post_training_path, class:"btn btn-sm", style:"background-color: white; color: black; padding: 10px;" %>
                 </li>
                 <li style="margin: 10px;">
                   <%= link_to 'マイページ', user_path(current_user), class:"btn btn-sm", style:"background-color: white; color: black; padding: 10px;" %>
+                </li>
+                <li style="margin: 10px;">
+                  <%= link_to 'ユーザー検索', users_path, class:"btn btn-sm", style:"background-color: white; color: black; padding: 10px;" %>
                 </li>
                 <li style="margin: 10px;">
                   <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"btn btn-sm", style:"background-color: white; color: black; padding: 10px;" %>
