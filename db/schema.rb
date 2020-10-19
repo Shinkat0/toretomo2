@@ -12,9 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_10_16_045256) do
 
-  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "post_training_id", null: false
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "post_training_id", null: false
     t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -22,17 +22,17 @@ ActiveRecord::Schema.define(version: 2020_10_16_045256) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "post_training_id", null: false
-    t.bigint "user_id", null: false
+  create_table "favorites", force: :cascade do |t|
+    t.integer "post_training_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_training_id"], name: "index_favorites_on_post_training_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
-  create_table "post_trainings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "user_id", null: false
+  create_table "post_trainings", force: :cascade do |t|
+    t.integer "user_id", null: false
     t.text "note"
     t.string "exercise"
     t.integer "weight"
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2020_10_16_045256) do
     t.index ["user_id"], name: "index_post_trainings_on_user_id"
   end
 
-  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "follow_id"
+  create_table "relationships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "follow_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_10_16_045256) do
     t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

@@ -1,30 +1,22 @@
 class PostTrainingsController < ApplicationController
   before_action :set_post_training, only: [:show, :edit, :update, :destroy]
 
-  # GET /post_trainings
-  # GET /post_trainings.json
   def index
     @post_trainings = PostTraining.all
   end
 
-  # GET /post_trainings/1
-  # GET /post_trainings/1.json
   def show
     @favorite = Favorite.new
     @comments = @post_training.comments
   end
 
-  # GET /post_trainings/new
   def new
     @post_training = PostTraining.new
   end
 
-  # GET /post_trainings/1/edit
   def edit
   end
 
-  # POST /post_trainings
-  # POST /post_trainings.json
   def create
     @post_training = current_user.post_trainings.build(post_training_params)
 
@@ -39,8 +31,6 @@ class PostTrainingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /post_trainings/1
-  # PATCH/PUT /post_trainings/1.json
   def update
     respond_to do |format|
       if @post_training.update(post_training_params)
@@ -53,8 +43,6 @@ class PostTrainingsController < ApplicationController
     end
   end
 
-  # DELETE /post_trainings/1
-  # DELETE /post_trainings/1.json
   def destroy
     @post_training.destroy
     respond_to do |format|
@@ -64,12 +52,10 @@ class PostTrainingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_post_training
       @post_training = PostTraining.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def post_training_params
       params.require(:post_training).permit(:note, :exercise, :weight, :rep, :bodyweight, :image)
     end
