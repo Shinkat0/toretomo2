@@ -5,6 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 
   </head>
 
@@ -20,6 +23,9 @@
                 </li>
                 <li class="nav-item" style="margin: 10px; text-align: center; float: left;">
                   <%= link_to 'Toretomoとは', about_homes_path, class:"btn btn-sm", style:"background-color: white; color: black; padding: 10px;" %>
+                </li>
+                <li style="margin: 10px; text-align: center; float: left;">
+                  <%= link_to 'トレ記録一覧', post_trainings_path, class:"btn btn-sm", style:"background-color: white; color: black; padding: 10px;" %>
                 </li>
                 <li class="nav-item" style="margin: 10px; text-align: center; float: left;">
                   <%= link_to 'トレ記録投稿', new_post_training_path, class:"btn btn-sm", style:"background-color: white; color: black; padding: 10px;" %>
